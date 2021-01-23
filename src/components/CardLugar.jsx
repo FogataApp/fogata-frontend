@@ -1,13 +1,13 @@
 import React from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../styles/CardLugar.css";
 
-const CardLugar = ({ title, url, description, location, category }) => {
+const CardLugar = ({ _id, title, image, description, location, category }) => {
   const history = useHistory();
-  const handleClick = () => history.push("/detalle");
+  const handleClick = () => history.push(`/detalle?id=${_id}`);
   return (
     <div className="CardLugar" onClick={handleClick}>
-      <img src={url} alt="site" />
+      <img src={image} alt="site" />
       <div className="CardLugar--text">
         <h1>{title}</h1>
         <p>{description}</p>
