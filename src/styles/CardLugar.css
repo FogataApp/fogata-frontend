@@ -1,6 +1,11 @@
 .CardLugar {
   display: flex;
-  font-size: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.CardLugar:hover{
+  background-color: #EAECF8;
 }
 
 .CardLugar img{
@@ -15,3 +20,13 @@
   border-bottom: 1px solid rgb(224, 224, 224);
   margin-left: 2rem;
 } 
+
+.CardLugar h1{
+  font-weight: 400;
+}
+
+.CardLugar p{
+  font-weight: 300;
+  color: rgb(73, 73, 73);
+}
+
