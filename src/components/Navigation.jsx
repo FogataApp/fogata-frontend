@@ -26,7 +26,9 @@ const Navigation = () => {
           <BiCog size="2rem" color="#7b48ff" />
         </li>
       </ul>
-      <img className="Profile-picture" src="/profile.jpg" alt="profile" />
+      <Link className="profile-link" to="/profile">
+        <img className="Profile-picture" src="/profile.jpg" alt="profile" />
+      </Link>
     </nav>
   );
 };
