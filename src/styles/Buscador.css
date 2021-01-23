@@ -1,0 +1,11 @@
+.Buscador{
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #EAECF8;
+    width: 90%;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0 auto;
+    outline: none;
+}
