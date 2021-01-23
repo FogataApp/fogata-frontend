@@ -11,12 +11,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Router>
-        <Switch>
-          <Router exact path="/login">
-            <Login /> 
-          </Router>
-        </Switch>
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route path="/detalle">
           <DetalleLugar />
@@ -26,7 +23,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  );  
+  );
 }
 
 export default App;
