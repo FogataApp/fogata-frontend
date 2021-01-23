@@ -1,17 +1,14 @@
 import React from "react";
 import "../styles/Map.css";
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import mapStyle from "../mapStyles";
 
 const libraries = ["places"];
 
 const mapContainerStyle = {
   width: "100%",
+  minHeight: "400px",
+  maxHeight: "100vh",
   borderRadius: "50px",
 };
 
@@ -27,6 +24,7 @@ const options = {
 };
 
 const Map = ({ lugares }) => {
+  console.log(lugares.position);
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyDZB8T13fuPlDte55tWJUZcAk__76RisIo",
     libraries,
@@ -38,12 +36,16 @@ const Map = ({ lugares }) => {
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
       zoom={14}
-      center={center}
+      center={lugares.position !== undefined ? lugares.position : center}
       options={options}
     >
-      {lugares.map((lugar) => (
-        <Marker key={lugar.id} position={lugar.position} />
-      ))}
+      {lugares.length > 1 ? (
+        lugares.map((lugar) => (
+          <Marker key={lugar._id} position={lugar.position} />
+        ))
+      ) : (
+        <Marker position={lugares.position} />
+      )}
     </GoogleMap>
   );
 };

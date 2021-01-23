@@ -10,9 +10,10 @@ const ListaLugares = ({ lugares }) => {
       </h1>
       {lugares.map((lugar) => (
         <CardLugar
-          key={lugar.id}
+          key={lugar._id}
+          _id={lugar._id}
           title={lugar.title}
-          url={lugar.url}
+          image={lugar.image}
           description={lugar.description}
           location={lugar.location}
           category={lugar.category}
